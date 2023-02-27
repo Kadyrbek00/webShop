@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import '../styles/Home/home.css'
 
 export default function Home() {
     const [products, setProducts] = useState([])
@@ -11,7 +12,6 @@ export default function Home() {
         }
         fetchData()
     }, [])
-    console.log(products);
     return (
         <div className="container">
             {/* {products.map(el => <p key={el.id}>{el.title}</p>)} */}
