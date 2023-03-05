@@ -1,15 +1,15 @@
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 import "../styles/Header/header.css"
 
 const namePaths = [
     { id: 1, title: "Главная", path: "/" },
     { id: 2, title: "Корзина", path: "/basket" },
-    { id: 3, title: "Акции", path: "/#" },
-    { id: 4, title: "Популярные", path: "/#" },
-    { id: 5, title: "Новинки", path: "/#" },
-    { id: 6, title: "Новости", path: "/#" },
-    { id: 7, title: "О", path: "/#" },
-    { id: 8, title: "Контакты", path: "/#" },
+    { id: 3, title: "Акции", path: "/action" },
+    { id: 4, title: "Популярные", path: "/populars" },
+    { id: 5, title: "Новинки", path: "/new" },
+    { id: 6, title: "Новости", path: "/news" },
+    { id: 7, title: "О", path: "/about" },
+    { id: 8, title: "Контакты", path: "/contact" },
 ]
 
 function Header() {
@@ -19,19 +19,19 @@ function Header() {
         <nav className='nav'>
             {namePaths.map(({ id, title, path }) => {
                 return (
-                    <Link key={id} href={path}>
+                    <NavLink key={id} to={path}>
                         {title}
-                    </Link>
+                    </NavLink>
                 )
             })}
 
 
-            <Link className='right' href={"/"}>
+            <NavLink className='right' to={"/info"}>
                 Инфо
-            </Link>
-            <Link href={"/"}>
+            </NavLink>
+            <NavLink to={"/call"}>
                 Позвонить
-            </Link>
+            </NavLink>
         </nav >
     )
 }

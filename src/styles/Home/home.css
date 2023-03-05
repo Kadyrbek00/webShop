@@ -1,42 +1,45 @@
-.container {
+.main-container {
+  padding-top: 90px;
+}
+.main-container .container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, auto));
+  grid-template-columns: repeat(auto-fit, minmax(350px, auto));
   justify-items: center;
   align-items: center;
   row-gap: 20px;
-  padding-top: 90px;
+  padding-top: 40px;
 }
-.container div {
+.main-container .container .internal-container {
   display: grid;
   align-items: center;
   justify-items: center;
-  width: 80%;
+  width: 60%;
   height: 100%;
   cursor: pointer;
-  box-shadow: 3px 1px 20px -15px;
+  box-shadow: 3px 1px 20px -12.5px;
   padding-right: 15px;
   padding-left: 15px;
-  border-radius: 20px;
+  border-radius: 15px;
   background-color: #dbd6d6;
   color: black;
   text-decoration: none;
 }
-.container h1 {
+.main-container .container h1 {
   background-color: #dbd6d6;
-  font-size: 30px;
+  font-size: 25px;
   padding: 10px;
 }
-.container .image {
-  width: 200px;
-  border-radius: 20px;
+.main-container .container .image {
+  width: 120px;
+  border-radius: 15px;
 }
-.container .title {
-  font-size: 19px;
+.main-container .container .title {
+  font-size: 16px;
   background-color: #dbd6d6;
   padding: 15px;
 }
-.container .price {
-  font-size: 18px;
+.main-container .container .price {
+  font-size: 16px;
   font-weight: 600;
   background-color: #dbd6d6;
   padding: 5px;

@@ -1,43 +1,46 @@
-.container
-    display: grid
-    grid-template-columns: repeat(auto-fit, minmax(400px, auto))
-    justify-items: center
-    align-items: center
-    row-gap: 20px
+.main-container
     padding-top: 90px
 
-    div
+    .container
         display: grid
-        align-items: center
+        grid-template-columns: repeat(auto-fit, minmax(350px, auto))
         justify-items: center
-        width: 80%
-        height: 100%
-        cursor: pointer
-        box-shadow: 3px 1px 20px -15px
-        padding-right: 15px
-        padding-left: 15px
-        border-radius: 20px
-        background-color: #dbd6d6
-        color: black
-        text-decoration: none
+        align-items: center
+        row-gap: 20px
+        padding-top: 40px
 
-    h1
-        background-color: #dbd6d6
-        font-size: 30px
-        padding: 10px
+        .internal-container
+            display: grid
+            align-items: center
+            justify-items: center
+            width: 60%
+            height: 100%
+            cursor: pointer
+            box-shadow: 3px 1px 20px -12.5px
+            padding-right: 15px
+            padding-left: 15px
+            border-radius: 15px
+            background-color: #dbd6d6
+            color: black
+            text-decoration: none
 
-    .image
-        width: 200px
-        border-radius: 20px
+        h1
+            background-color: #dbd6d6
+            font-size: 25px
+            padding: 10px
 
-    .title
-        font-size: 19px
-        background-color: #dbd6d6
-        padding: 15px
+        .image
+            width: 120px
+            border-radius: 15px
 
-    .price
+        .title
+            font-size: 16px
+            background-color: #dbd6d6
+            padding: 15px
 
-        font-size: 18px
-        font-weight: 600
-        background-color: #dbd6d6
-        padding: 5px
+        .price
+
+            font-size: 16px
+            font-weight: 600
+            background-color: #dbd6d6
+            padding: 5px

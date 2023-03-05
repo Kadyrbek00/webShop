@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom'
 import '../styles/Home/home.css'
+
 
 export default function Home() {
     const [products, setProducts] = useState([])
+    const [search, setSearch] = useState('')
 
     useEffect(() => {
         const fetchData = async () => {
@@ -12,22 +15,35 @@ export default function Home() {
         }
         fetchData()
     }, [])
-    return (
-        <div className="container">
-            {/* {products.map(el => <p key={el.id}>{el.title}</p>)} */}
-            {products && products.map((datas) => {
-                return (
-                    // <Link href={`/products/${datas.id}`} key={datas.id}>
-                    <div key={datas.id}>
-                        <h1>{datas.category}</h1>
-                        <img className="image" src={datas.image} alt={datas.category} />
-                        <p className="title">{datas.title}</p>
-                        <p className="price">{datas.price}$</p>
-                    </div>
 
-                    // </Link>
-                )
-            })}
+    const filterProducts = products.filter(product => {
+        return product.category.toLowerCase().includes(search.toLowerCase())
+    })
+
+    return (
+        <div className='main-container'>
+            <input
+                value={search}
+                autoFocus
+                type="text"
+                autoComplete='off'
+                onChange={(e) => setSearch(e.target.value)}
+                placeholder='Поиск товара'
+            />
+            <button onClick={filterProducts}>click me</button>
+            <div className="container">
+                {filterProducts && filterProducts.map((datas) => {
+                    return (
+                        <Link to={`/products/${datas.id}`} key={datas.id} className="internal-container">
+                            <h1>{datas.category}</h1>
+                            <img className="image" src={datas.image} alt={datas.category} />
+                            <p className="title">{datas.title}</p>
+                            <p className="price">{datas.price}$</p>
+                        </Link>
+                    )
+                })}
+            </div>
         </div>
+
     );
 }
